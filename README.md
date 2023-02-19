@@ -26,4 +26,4 @@ You need to :
 3. In the folder "data", create a folder "figures" in which to copy text files "0-7.txt" with pictures of the hanged man.
 
 ### How to play
-Just find file main.rb using command line and run.
+Just find file "main.rb" using command line and run.
