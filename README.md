@@ -21,6 +21,6 @@ Enter next letter:
 ```
 ### Preparing for the game.
 You need to : 
-1. Copy all the files to your computer, then create a folder and put it there. 
-2. Create a folder in which to attach a text file with words that will need to be guessed. 
-3. In the folder, create a folder in which to copy text files with pictures of the hanged man.
+1. Copy all the files to your computer, then create a folder "lib" and put it there "game.rb" and "consoleinterface.rb". 
+2. Create a folder "data" in which to attach a text file with words "words.txt" that will need to be guessed. 
+3. In the folder "data", create a folder "figures" in which to copy text files "0-7.txt" with pictures of the hanged man.
