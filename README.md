@@ -20,10 +20,11 @@ Do you have any errors left: 7
 Enter next letter:
 ```
 ### Preparing for the game.
-You need to : 
-1. Copy all the files to your computer, then create a folder "lib" and put it there "game.rb" and "consoleinterface.rb". 
-2. Create a folder "data" in which to attach a text file with words "words.txt" that will need to be guessed. 
-3. In the folder "data", create a folder "figures" in which to copy text files "0-7.txt" with pictures of the hanged man.
-
+You need to copy folder `gallows` on your computer.
 ### How to play
 Just find file "main.rb" using command line and run.
+```
+ruby main.rb
+```
+### How to change the rules of the game.
+To change the number of errors simply in the game.rb file, change the number in the TOTAL_ERRORS_ALLOWED constant, but at the same time it is better to increase or decrease the number of pictures of the hanged.
