@@ -1,5 +1,5 @@
-## Digest
-### Rules of the game
+## The Gallows Game.
+### Rules of the game.
 The computer guesses a word from the array that you need to guess.
 ```
 Hello!
