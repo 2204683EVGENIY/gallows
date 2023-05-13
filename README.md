@@ -32,5 +32,5 @@ bundle install
 Just find file "main.rb" using command line and run.
 
 ```
-ruby main.rb
+bundle exec ruby main.rb
 ```
