@@ -23,19 +23,19 @@ class ConsoleInterface
   end
 
   def figure
-    return FIGURES[@game.errors_made]
+    FIGURES[@game.errors_made]
   end
 
   def word_to_show
     result =
       @game.letters_to_guess.map do |letter|
-        if letter == nil
+        if letter.nil?
           "__"
         else
           letter
         end
       end
-    return result.join(" ")
+    result.join(" ")
   end
 
   def errors_to_show
@@ -45,6 +45,5 @@ class ConsoleInterface
   def get_input
     print "Enter next letter: ".colorize(:color => :yellow, :mode => :bold)
     letter = gets[0].upcase
-    return letter
   end
 end
