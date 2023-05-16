@@ -1,6 +1,22 @@
 class Game
   TOTAL_ERRORS_ALLOWED = 7
 
+  def self.normalize(letter)
+    case letter
+    when "Ё"
+      "Е"
+    when "Й"
+      "И"
+    else
+      letter
+    end
+  end
+
+  def initialize(word)
+    @letters = word.chars
+    @user_guesses = []
+  end
+
   def errors
     @user_guesses - normalized_letters
   end
@@ -37,17 +53,6 @@ class Game
   def play!(letter)
     normalized_letter = self.class.normalize(letter)
     @user_guesses << normalized_letter if !over? && !@user_guesses.include?(normalized_letter)
-  end
-
-  def self.normalize(letter)
-    case letter
-    when "Ё"
-      "Е"
-    when "Й"
-      "И"
-    else
-      letter
-    end
   end
 
   def won?
