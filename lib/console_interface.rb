@@ -3,19 +3,6 @@ class ConsoleInterface
     Dir[__dir__ + "/../data/figures/*.txt"].
     sort.map { |file_name| File.read(file_name) }
 
-  def errors_to_show
-    return @game.errors.join(", ")
-  end
-
-  def figure
-    FIGURES[@game.errors_made]
-  end
-
-  def get_input
-    print "Enter next letter: ".colorize(:color => :yellow, :mode => :bold)
-    letter = gets[0].upcase
-  end
-
   def initialize(game)
     @game = game
   end
@@ -35,7 +22,20 @@ class ConsoleInterface
     end
   end
 
+  def figure
+    FIGURES[@game.errors_made]
+  end
+
   def word_to_show
     @game.letters_to_guess.map { |letter| letter || "__" }.join(" ")
+  end
+
+  def errors_to_show
+    return @game.errors.join(", ")
+  end
+
+  def get_input
+    print "Enter next letter: ".colorize(:color => :yellow, :mode => :bold)
+    letter = gets[0].upcase
   end
 end

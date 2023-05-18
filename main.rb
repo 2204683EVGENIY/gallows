@@ -4,10 +4,12 @@ require "colorize"
 
 # 1. Say hello
 puts "Hello!".colorize(:color => :yellow, :mode => :bold)
+
 # 2. Download a random word from a file
 word = File.readlines(__dir__ + "/data/words.txt", encoding: "UTF-8", chomp: true).sample
 game = Game.new(word)
 console_interface = ConsoleInterface.new(game)
+
 # 3. Until the game is over
 until game.over?
   #  3.1 Display the next state of the game
@@ -17,5 +19,6 @@ until game.over?
   #  3.3 Update game status
   game.play!(letter)
 end
+
 # 4. Output the final state of the game
 console_interface.print_out
