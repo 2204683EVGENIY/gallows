@@ -7,6 +7,15 @@ class ConsoleInterface
     @game = game
   end
 
+  def errors_to_show
+    @game.errors.join(", ")
+  end
+
+  def get_input
+    print "Enter next letter: ".colorize(:color => :yellow, :mode => :bold)
+    letter = gets[0].upcase
+  end
+
   def print_out
     puts <<~END
       #{"Word".colorize(:color => :yellow, :mode => :bold)}: #{word_to_show.colorize(:color => :blue, :mode => :bold)}
@@ -28,14 +37,5 @@ class ConsoleInterface
 
   def word_to_show
     @game.letters_to_guess.map { |letter| letter || "__" }.join(" ")
-  end
-
-  def errors_to_show
-    return @game.errors.join(", ")
-  end
-
-  def get_input
-    print "Enter next letter: ".colorize(:color => :yellow, :mode => :bold)
-    letter = gets[0].upcase
   end
 end
