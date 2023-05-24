@@ -1,8 +1,8 @@
 class ConsoleInterface
   FIGURES =
-    Dir[File.join(__dir__, '../data/figures/*.txt')]
-    .sort
-    .map { |file_name| File.read(file_name) }
+    Dir[File.join("#{__dir__}/../data/figures/*.txt")]
+      .sort
+      .map { |file_name| File.read(file_name) }
 
 
   def initialize(game)
@@ -21,7 +21,7 @@ class ConsoleInterface
   def print_out
     puts <<~GAME_INFO
       #{"Word".colorize(color: :yellow, mode: :bold)}: #{word_to_show.colorize(color: :blue, mode: :bold)}
-      #{figure.colorize(:color => :green, mode: :bold)}
+      #{figure.colorize(color: :green, mode: :bold)}
       #{"Errors".colorize(color: :yellow, mode: :bold)} (#{@game.errors_made}): #{errors_to_show.colorize(color: :red, mode: :bold)}
       #{"Errors left".colorize(color: :yellow, mode: :bold)}: #{@game.errors_allowed}
     GAME_INFO
