@@ -3,10 +3,10 @@ require_relative "lib/game"
 require "colorize"
 
 # 1. Say hello
-puts "Hello!".colorize(:color => :yellow, :mode => :bold)
+puts "Hello!".colorize(color: :yellow, mode: :bold)
 
 # 2. Download a random word from a file
-word = File.readlines(__dir__ + "/data/words.txt", encoding: "UTF-8", chomp: true).sample
+word = File.readlines("#{__dir__}/data/words.txt", chomp: true).sample
 game = Game.new(word)
 console_interface = ConsoleInterface.new(game)
 
