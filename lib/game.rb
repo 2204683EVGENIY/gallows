@@ -1,7 +1,7 @@
 class Game
   TOTAL_ERRORS_ALLOWED = 7
 
-  def self.normalize(letter)
+  def self.normalize( letter )
     case letter
     when "Ё"
       "Е"
@@ -12,7 +12,7 @@ class Game
     end
   end
 
-  def initialize(word)
+  def initialize( word )
     @letters = word.chars
     @user_guesses = []
   end
